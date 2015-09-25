@@ -16,47 +16,16 @@
         }
         #mapHolder {
             width: 80%;
-            height: 60%;
+            height: 80%;
         }
     </style>
-    <script src="scripts/app.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="scripts/data.js"> AIzaSyD4dzrgSAjRuep6FBQY8DPucQlbkFlFTSc </script>
+    
 </head>
 <body>
     <div id="mapHolder"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA314LSNAKons47ifXkKD6bbQKogPoXQG4&callback=initMap"></script>
-    <script>
-        var mapHolder = document.getElementById('mapHolder'),
-            myMap,
-            countryBounds = false,
-            countryCenter = {
-                lat: 24, 
-                lng: 45
-            };
-        function initMap() {
-            var currentZoom = 5;
-            myMap = new google.maps.Map(mapHolder, {
-                center: countryCenter,
-                zoom: 5
-            });
-            google.maps.event.addListener(myMap,'zoom_changed', function(){
-                var newZoom = myMap.getZoom();
-                if(newZoom<5) {
-                    myMap.zoom = 5;
-                }
-            });
-            google.maps.event.addListener(myMap,'bounds_changed', function(){
-                var newBounds;
-                if(!countryBounds) {
-                    countryBounds =  myMap.getBounds();
-                    center = myMap.getCenter();
-                } else {
-                    newBounds = myMap.getBounds();
-                }                
-                if(newBounds!= countryBounds) {
-                    myMap.setCenter(countryCenter);
-                }
-            }); 
-        }
-    </script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
