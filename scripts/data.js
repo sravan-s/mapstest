@@ -13,10 +13,10 @@ Region.prototype.setAttr = function (attr, val) {
     this[attr] = val;
 };
 Region.prototype.getZoom = function () {
-    if(this.area > 700000) {
+    if (this.area > 700000) {
         return 5;
     }
-    if(this.area < 700000 && this.area > 10887) {
+    if (this.area < 700000 && this.area > 10887) {
         return 6;
     }
 };
@@ -110,7 +110,7 @@ var bahah = new Province({
     }
 });
 var northernborders = new Province({
-    name: "northernborders",
+    name: "northern borders",
     area: 111797,
     center: {
         lat: 30,
@@ -143,10 +143,20 @@ var asir = new Province({
 });
 var najran = new Province({
     name: "najran",
-    area: 672522,
+    area: 149511,
     center: {
         lat: 18,
         lng: 45
     }
+})
+var eastern = new Province({
+    name: "eastern province",
+    area: 672522,
+    center: {
+        lat: 24, 
+        lng: 50
+    }
 });
-var tier1 = [ hail, qassim, riyadh, tabuk, madinah, makkah, bahah, northernborders, jawf, jizan, asir, najran];
+var tier = [];
+tier[0] = [saudi];
+tier[1] = [ hail, qassim, riyadh, tabuk, madinah, makkah, bahah, northernborders, jawf, jizan, asir, najran];
